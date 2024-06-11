@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user, only: [:show]
   skip_before_action :login_required, only: [:new, :create]
-  
+
   def new 
     @user = User.new
   end
@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     if @user.save
       # ユーザ登録に成功した場合の処理
       flash[:info] = "アカウントを登録しました"
-      log_in(@user)
-      redirect_to user_path(@user.id) ###################一覧画面に変更！！
+      log_in(@user) 
+      redirect_to tasks_path(@user.id) 
     else
       # ユーザ登録に失敗した場合の処理
       render :new
@@ -23,6 +23,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  ##編集==============
+  def edit
+  end
 
 
   private
