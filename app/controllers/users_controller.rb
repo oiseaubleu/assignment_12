@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :correct_user, only: [:show]
+  before_action :correct_user, only: [:show,:edit, :update, :destro]
   skip_before_action :login_required, only: [:new, :create]
 
   def new 
@@ -26,6 +26,18 @@ class UsersController < ApplicationController
   ##編集==============
   def edit
   end
+
+ ##update==============
+ def update
+    
+  if @user.update(user_params)
+    redirect_to user_path(@user), notice: '	アカウントを更新しました'
+  else
+    render :edit, status: :unprocessable_entity 
+  end
+
+end
+
 
 
   private
