@@ -10,13 +10,14 @@
   </head>
 
   <body>
-    <p id="notice"><%= notice %></p>
+    
        <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     
     <% if logged_in? %>
       <ul>
+      <li><%= link_to "タスク一覧", user_path(current_user.id) %></li>
       <li><%= link_to "アカウント", user_path(current_user.id) %></li>
       <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
       </ul>
