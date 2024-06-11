@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :correct_user, only: [:show,:edit, :update, :destro]
+  before_action :correct_user, only: [:show,:edit, :update, :destroy]
   skip_before_action :login_required, only: [:new, :create]
 
   def new 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def edit
   end
 
- ##update==============
+ ##更新==============
  def update
     
   if @user.update(user_params)
@@ -37,6 +37,13 @@ class UsersController < ApplicationController
   end
 
 end
+
+ ##削除==============
+ def destroy
+  @user.destroy 
+     redirect_to new_session_path
+end
+
 
 
 
