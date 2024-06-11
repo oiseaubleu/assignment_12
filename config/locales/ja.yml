@@ -6,10 +6,20 @@ ja:
       task:
         title: タイトル
         content: 内容
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+
+
+
   errors:
-    format: "%{attribute}%{message}"
+    format: "%{message}"
     messages:
-      blank: を入力してください
+      blank: "%{attribute}を入力してください"
   helpers:
     submit:
       create: 登録する
