@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
   private
 
   def login_required
-    flash[:danger] = 'ログインしてください'
-    redirect_to new_session_path unless current_user
+    #flash[:danger] = 'ログインしてください'
+    #redirect_to new_session_path unless current_user
+    unless current_user then
+      flash[:danger] = 'ログインしてください'
+      redirect_to new_session_path
+    end
   end
 
 end
