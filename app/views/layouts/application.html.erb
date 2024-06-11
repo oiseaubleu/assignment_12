@@ -17,14 +17,15 @@
     
     <% if logged_in? %>
       <ul>
-      <li><%= link_to "タスク一覧", user_path(current_user.id) %></li>
-      <li><%= link_to "アカウント", user_path(current_user.id) %></li>
-      <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+      <li id="tasks-index"><%= link_to "タスク一覧", tasks_path(current_user.id) %></li>
+      <li id="new-task"><%= link_to "タスクを登録する", new_task_path(current_user.id) %></li>
+      <li id="my-account"><%= link_to "アカウント", user_path(current_user.id) %></li>
+      <li id="sign-out"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
       </ul>
     <% else %>
-      <ul >       
+      <ul>       
       <li id="sign-up"><%= link_to "アカウント登録", new_user_path%></li>
-      <li><%= link_to "ログイン", new_session_path %></li>
+      <li id="sign-in"><%= link_to "ログイン", new_session_path %></li>
       </ul>
     <% end %>
     <%= yield %>
