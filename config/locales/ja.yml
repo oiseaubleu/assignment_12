@@ -13,7 +13,7 @@ ja:
         name: 名前
         email: メールアドレス
         password: パスワード
-
+        password_confirmation: パスワード（確認）
 
 
   errors:
@@ -46,3 +46,10 @@ ja:
       updated: タスクを更新しました
     destroy:
       destroyed: タスクを削除しました
+
+###  
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      confirmation: と%{attribute}の入力が一致しません
+     
