@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :tasks
  validates :name, presence: true, length: { maximum: 30 } 
   # errors.add(:name, "名前を入力してください")
   #validates :name, presence: {message:"名前を入力してください"}
