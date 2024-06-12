@@ -6,11 +6,11 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = current_user.tasks.build
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
     if @task.save
       redirect_to tasks_path, notice: t('.created')
     else
@@ -40,7 +40,8 @@ class TasksController < ApplicationController
   private
 
     def set_task
-      @task = Task.find(params[:id])
+      @task = current_user.tasks.find(params[:id])
+      
     end
 
     def task_params
