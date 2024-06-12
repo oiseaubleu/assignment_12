@@ -20,7 +20,7 @@ ja:
     format: "%{message}"
     messages:
       blank: "%{attribute}を入力してください"
-      confirmation: "%{attribute}(確認)と%{attribute}の入力が一致しません"
+      confirmation: "%{attribute}（確認）と%{attribute}の入力が一致しません"
   helpers:
     submit:
       create: 登録する
