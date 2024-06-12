@@ -4,8 +4,8 @@
 <div>
 <tbody>
   <tr>
-  <td id="edit-user"><%= link_to "編集", edit_user_path(@user) %></td> |
-  <td id="destroy-user"><%= link_to '削除', @user, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %></td>
+  <td><%= link_to "編集", edit_user_path(@user), id:"edit-user" %></td> |
+  <td><%= link_to '削除', @user, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, id:"destroy-user" %></td>
   </tr>
  </tbody>
 

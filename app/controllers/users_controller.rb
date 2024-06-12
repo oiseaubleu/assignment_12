@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
  ##更新==============
  def update
-    
+    binding.irb
   if @user.update(user_params)
     redirect_to user_path(@user), notice: '	アカウントを更新しました'
   else
